@@ -1,12 +1,9 @@
 import java.io.*;
 import java.util.*;
-
 /**
- * Write a description of class CelebrityNames here.
- * 
- * @author Roger Jaffe
- * @version 2015-01-19
- */
+ * @authors Chris Meyers, James Marr
+ */ 
+
 public class CelebrityNames
 {
     public static final String FILE_NAME = "CelebrityData.txt";
@@ -30,10 +27,12 @@ public class CelebrityNames
         { 
             Scanner sc = new Scanner( text[j] );
             String firstName = sc.next( );
+            String middleName = sc.next( );
             String lastName = sc.next( );
-            reversedName[j] = lastName + ", " + firstName;
+            String birthDate = sc.nextLine( );
+            reversedName[j] = lastName + ", " + firstName + " " + middleName + " -- " + birthDate;
         } 
-        
+
         Arrays.sort(reversedName);
         for (int j =0; j <= maxIndx; j++)
         { 
